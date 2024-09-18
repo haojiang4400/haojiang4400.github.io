@@ -1,31 +1,165 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hao Jiang</title>
-    <style>
-        body {
-            font-family: Helvetica, Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
-        h1 {
-            font-family: Helvetica, Arial, sans-serif;
-            text-align: center;
-            color: #333;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-    </style>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <title>Hao Jiang</title>
+
+  <meta name="author" content="Jon Barron">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+
 </head>
+
 <body>
-    <h1>Hi, I'm Hao</h1>
+  <table
+    style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+    <tbody>
+      <tr style="padding:0px">
+        <td style="padding:0px">
+          <table
+            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr style="padding:0px">
+                <td style="padding:2.5%;width:63%;vertical-align:middle">
+                  <p class="name" style="text-align: center;">
+                    Hao Jiang
+                  </p>
+                  <p>I am a fourth-year undergraduate student at <a href="https://www.usc.edu/" target="_blank">University of Southern California</a> where I'm working with Prof. <a href="https://danielseita.github.io/" target="_blank">Daniel Seita</a>. 
+                      I’m double majoring in Computer Science (CS) and Applied and Computational Mathematics (AMCM).
+                      I'm broadly interested in robot learning and manipulation.
+                      <!-- I’m actively seeking PhD or research-oriented MS positions after graduation. -->
+                  </p>
+                  <p style="text-align:center">
+                    <a href="mailto:hjiang86@usc.com" target="_blank">Email</a> &nbsp;/&nbsp;
+                    <!-- <a href="data/upcoming.pdf" target="_blank">CV</a> &nbsp;/&nbsp; -->
+                    <!-- <a href="data/upcoming.txt" target="_blank">Bio</a> &nbsp;/&nbsp; -->
+                    <a href="https://scholar.google.com/citations?hl=en&user=qEEdTEwAAAAJ" target="_blank">Google
+                      Scholar</a>
+                    &nbsp;/&nbsp;
+                    <a href="https://github.com/msornerrrr/" target="_blank">Github</a> &nbsp;/&nbsp;
+                    <a href="https://www.linkedin.com/in/hao-jiang-1a3a73225/" target="_blank">LinkedIn</a>
+                  </p>
+                </td>
+                <td style="padding:2.5%;width:40%;max-width:40%;">
+                  <img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo"
+                    src="images/me/HaoJiang2.png" class="hoverZoomLink">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table
+            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr>
+                <td style="padding:20px;width:100%;vertical-align:middle">
+                  <h2>Research</h2>
+                  <p>
+                    My research interest lies in developing advanced robot policy and skill learning techniques, particularly for complex manipulation tasks like dexterous manipulation. 
+                    I am fascinated by how robots can be trained to better perceive and interact with their surroundings through the integration of multimodal perception—combining visual, tactile, and auditory inputs. 
+                    A key focus is on designing innovative observation spaces that not only enhance policy learning but also deepen the robot's understanding of the environment. 
+                    I explore how deep reinforcement learning, imitation learning, and computer vision can be harnessed to push the boundaries of what robots can achieve, aiming to create machines capable of more intelligent, human-like interactions.
+                  </p>
+
+                  <p>(* indicates equal contribution, † indicates equal advising)</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table
+            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr onmouseout="sope_stop()" onmouseover="sope_start()">
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                  <div class="one">
+                    <div class="two" id='sope_image'>
+                      <video width=100% muted autoplay loop>
+                        <source src="images/sope/sope.webm" type="video/webm">
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                    <img src='images/sope/sope.jpg' width=100%>
+                  </div>
+                  <script type="text/javascript">
+                    function sope_start() {
+                      document.getElementById('sope_image').style.opacity = "1";
+                    }
+
+                    function sope_stop() {
+                      document.getElementById('sope_image').style.opacity = "0";
+                    }
+                    sope_stop()
+                  </script>
+                </td>
+                <td style="padding:20px;width:75%;vertical-align:middle">
+                  <a href="https://sope-dex.github.io/" target="_blank">
+                    <span class="papertitle">Learning to Singulate Objects in Packed
+                      Environments using a Dexterous Hand</span>
+                  </a>
+                  <br>
+                  <strong>Hao Jiang</strong>,
+                  <a href="https://yuhaiw.github.io/" target="_blank">Yuhai Wang*</a>,
+                  <a href="https://hanyang-zhou.github.io/" target="_blank">Hanyang Zhou*</a>,
+                  <a href="https://danielseita.github.io/" target="_blank">Daniel Seita</a>
+                  <br>
+                  In Review
+                  <!-- <em>ISSR</em>, 2024 -->
+                  <br>
+                  <a href="https://sope-dex.github.io/" target="_blank">project page</a>
+                  /
+                  <a href="https://www.youtube.com" target="_blank">video</a>
+                  /
+                  <a href="https://arxiv.org/abs/2409.00643" target="_blank">arXiv</a>
+                  /
+                  <a href="https://github.com/" target="_blank">code</a>
+                  <p></p>
+                  <p>
+                    This paper presents the Singulating Objects in Packed Environments (SOPE) framework, which utilizes a novel displacement-based state representation and a multi-phase RL approach to enable effective singulation of target objects in cluttered environments using a 16-DOF Allegro Hand. 
+                    The proposed method demonstrates high success rates in both simulation and real-world experiments, outperforming alternative techniques.
+                  </p>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+
+          <!-- <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+            <tbody>
+              <tr>
+                <td>
+                  <h2>Service</h2>
+                  <p>
+                    <b>Workshop reviewer</b>
+                    : ICRA 2024
+                    <br>
+                    <b>Course Producer</b>
+                    : ...
+                    <br>
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table> -->
+
+          <table
+            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr>
+                <td style="padding:0px">
+                  <br>
+                  <p>Inspired by the template <a href="https://github.com/jonbarron/website" target="_blank">here</a>.
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+  </table>
 </body>
+
 </html>
