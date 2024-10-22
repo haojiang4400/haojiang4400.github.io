@@ -10,10 +10,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
+  <button id="audioButton" onclick="toggleAudio()" 
+          style="position:fixed; top:10px; right:10px; padding:10px; background-color:transparent; color:#3e9eff; border:none; cursor:pointer;">
+    <i id="audioIcon" class="fas fa-play" style="font-size:20px;"></i>
+  </button>
+
+  <audio id="myAudio" style="display:none;">
+    <source src="images/me/me.m4a" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
   <table
     style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
     <tbody>
@@ -161,6 +171,9 @@
         </td>
       </tr>
   </table>
+
+  <!-- Import the external JavaScript file -->
+  <script src="script.js"></script>
 </body>
 
 </html>
