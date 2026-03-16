@@ -1,3 +1,8 @@
+/* =========================================================
+   Fonts
+   ========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 /* latin-ext */
 @font-face {
   font-family: 'Lato';
@@ -63,73 +68,276 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+/* =========================================================
+   Base
+   ========================================================= */
+:root {
+  --accent:       #3e6ef5;
+  --accent-hover: #f09228;
+  --bg:           #f4f6fb;
+  --card-bg:      #ffffff;
+  --text:         #2b2d35;
+  --text-light:   #555;
+  --border:       #e4e8f0;
+  --shadow:       0 2px 16px rgba(60, 80, 140, 0.08);
+  --radius:       14px;
+  --paper-hover:  #f0f4ff;
+}
+
+[data-theme="dark"] {
+  --accent:       #6b9bff;
+  --accent-hover: #f09228;
+  --bg:           #141720;
+  --card-bg:      #1e2130;
+  --text:         #e8eaf0;
+  --text-light:   #9ba3b8;
+  --border:       #2e3347;
+  --shadow:       0 2px 20px rgba(0, 0, 0, 0.4);
+  --paper-hover:  #252a3d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 32px 16px 64px;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* =========================================================
+   Dark mode toggle button
+   ========================================================= */
+#darkToggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  z-index: 999;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text-light);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s;
+}
+#darkToggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: scale(1.1);
+}
+
+body, td, th, tr, p, a {
+  font-family: 'Inter', 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 14.5px;
+  line-height: 1.65;
+}
+
+strong {
+  font-family: 'Inter', 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 14.5px;
+}
+
+/* =========================================================
+   Links
+   ========================================================= */
 a {
-  color: #3e9eff;
+  color: var(--accent);
   text-decoration: none;
+  transition: color 0.15s ease;
 }
 
 a:focus,
 a:hover {
-  color: #f09228;
+  color: var(--accent-hover);
   text-decoration: none;
 }
 
-body,
-td,
-th,
-tr,
-p,
-a {
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 14px;
+/* =========================================================
+   Main card container
+   ========================================================= */
+body > table {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: background 0.25s ease, box-shadow 0.25s ease;
 }
 
-strong {
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 14px;
+/* =========================================================
+   Profile / header section
+   ========================================================= */
+.name {
+  padding-top: 24px;
+  margin: 0 0 4px;
+  font-family: 'Inter', 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: var(--text);
 }
 
+/* Profile photo */
+.hoverZoomLink {
+  box-shadow: 0 4px 20px rgba(60, 80, 140, 0.14);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.hoverZoomLink:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 28px rgba(60, 80, 140, 0.2);
+}
+
+/* =========================================================
+   Section headers (h2)
+   ========================================================= */
 h2 {
-  margin: 0;
-  font-weight: normal;
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 22px;
+  margin: 0 0 6px;
+  font-weight: 600;
+  font-family: 'Inter', 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 20px;
+  color: var(--text);
+  display: inline-block;
+  padding-bottom: 4px;
+  border-bottom: 2px solid var(--accent);
+}
+
+/* Co-author names (not hyperlinked, inherit body text color) */
+.coauthor {
+  color: var(--text);
+  transition: color 0.25s ease;
+}
+
+/* =========================================================
+   Paper/research rows
+   ========================================================= */
+.paper-row {
+  border-radius: 10px;
+  transition: background 0.18s ease;
+}
+.paper-row:hover {
+  background-color: var(--paper-hover);
 }
 
 .papertitle {
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 14px;
-  font-weight: 700;
+  font-family: 'Inter', 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.5;
 }
 
-.name {
-  padding-top: 20px;
-  margin: 0;
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 32px;
+/* Venue tag */
+em {
+  color: var(--text-light);
 }
 
+/* =========================================================
+   Paper thumbnail hover overlay
+   ========================================================= */
 .one {
   width: 160px;
   height: 160px;
   position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.10);
 }
 
 .two {
   width: 160px;
   height: 160px;
   position: absolute;
-  transition: opacity .2s ease-in-out;
-  -moz-transition: opacity .2s ease-in-out;
-  -webkit-transition: opacity .2s ease-in-out;
+  top: 0; left: 0;
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out;
 }
 
-.fade {
-  transition: opacity .2s ease-in-out;
-  -moz-transition: opacity .2s ease-in-out;
-  -webkit-transition: opacity .2s ease-in-out;
+/* =========================================================
+   Social links row
+   ========================================================= */
+.social-links a {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--text-light);
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+  margin: 2px 1px;
+}
+.social-links a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--paper-hover);
 }
 
+/* =========================================================
+   Misc
+   ========================================================= */
 span.highlight {
-  background-color: #ffffd0;
+  background-color: #fff3cd;
+  border-radius: 3px;
+  padding: 0 2px;
+}
+
+/* =========================================================
+   Other Publications (compact list)
+   ========================================================= */
+.other-pub {
+  padding: 10px 0 10px;
+  border-left: 3px solid var(--border);
+  padding-left: 14px;
+  margin-bottom: 12px;
+  transition: border-color 0.18s ease;
+}
+.other-pub:hover {
+  border-left-color: var(--accent);
+}
+
+.other-pub-title {
+  display: block;
+  font-weight: 600;
+  font-size: 14.5px;
+  color: var(--text);
+  line-height: 1.5;
+  margin-bottom: 3px;
+}
+.other-pub-title:hover {
+  color: var(--accent-hover);
+}
+
+.other-pub-authors {
+  color: var(--text-light);
+  font-size: 13px;
+  line-height: 1.5;
+  margin-bottom: 3px;
+}
+
+.other-pub-meta {
+  font-size: 13px;
+  color: var(--text-light);
+}
+
+.pub-links {
+  margin-left: 8px;
+}
+
+/* Footer */
+body > table td > table:last-of-type p {
+  color: #aaa;
+  font-size: 12px;
 }

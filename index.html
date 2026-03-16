@@ -6,7 +6,7 @@
 
   <title>Hao Jiang</title>
 
-  <meta name="author" content="Jon Barron">
+  <meta name="author" content="Hao Jiang">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
@@ -14,17 +14,11 @@
 </head>
 
 <body>
-  <button id="audioButton" onclick="toggleAudio()" 
-          style="position:fixed; top:10px; right:10px; padding:10px; background-color:transparent; color:#3e9eff; border:none; cursor:pointer;">
-    <i id="audioIcon" class="fas fa-play" style="font-size:20px;"></i>
+  <button id="darkToggle" aria-label="Toggle dark mode">
+    <i id="darkIcon" class="fas fa-moon"></i>
   </button>
 
-  <audio id="myAudio" style="display:none;">
-    <source src="images/me/me.m4a" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
-
-  <table
+<table
     style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
     <tbody>
       <tr style="padding:0px">
@@ -38,29 +32,24 @@
                     Hao Jiang | 姜昊
                   </p>
                   <p>
-                    I am a fourth-year undergraduate student at <a href="https://www.usc.edu/" target="_blank">University of Southern California</a> 
-                    where I'm working with Prof. <a href="https://danielseita.github.io/" target="_blank">Daniel Seita</a>. 
-                    I’m double majoring in Computer Science (CS) and Applied and Computational Mathematics (AMCM).
-                    <strong>I'm fortunate to continue as a PhD student here at USC!</strong>
+                    I am a first-year PhD student in Computer Science at the <a href="https://www.usc.edu/" target="_blank">University of Southern California</a>,
+                    advised by Prof. <a href="https://danielseita.github.io/" target="_blank">Daniel Seita</a>.
+                    I completed my undergraduate studies at USC, double majoring in Computer Science and Applied &amp; Computational Mathematics (ACMA).
                   </p>
                   <p>
                     I'm broadly interested in robot learning and manipulation. 
                     Currently, my focus is on dexterous grasping & manipulation.
                   </p>
-                  <p style="text-align:center">
-                    <a href="mailto:hjiang86@usc.com" target="_blank">Email</a> &nbsp;/&nbsp;
-                    <!-- <a href="data/upcoming.pdf" target="_blank">CV</a> &nbsp;/&nbsp; -->
-                    <!-- <a href="data/upcoming.txt" target="_blank">Bio</a> &nbsp;/&nbsp; -->
-                    <a href="https://scholar.google.com/citations?hl=en&user=qEEdTEwAAAAJ" target="_blank">Google
-                      Scholar</a>
-                    &nbsp;/&nbsp;
-                    <a href="https://github.com/msornerrrr/" target="_blank">Github</a> &nbsp;/&nbsp;
+                  <p class="social-links" style="text-align:center">
+                    <a href="mailto:hjiang86@usc.com" target="_blank">Email</a>
+                    <a href="https://scholar.google.com/citations?hl=en&user=qEEdTEwAAAAJ" target="_blank">Google Scholar</a>
+                    <a href="https://github.com/msornerrrr/" target="_blank">Github</a>
                     <a href="https://www.linkedin.com/in/hao-jiang-1a3a73225/" target="_blank">LinkedIn</a>
                   </p>
                 </td>
                 <td style="padding:2.5%;width:40%;max-width:40%;">
                   <img style="width:100%;max-width:100%;object-fit: cover; border-radius: 25%;" alt="profile photo"
-                    src="images/me/HaoJiang.png" class="hoverZoomLink">
+                    src="images/me/HaoJiang.JPG" class="hoverZoomLink">
                 </td>
               </tr>
             </tbody>
@@ -71,14 +60,7 @@
             <tbody>
               <tr>
                 <td style="padding:20px;width:100%;vertical-align:middle">
-                  <h2>Research</h2>
-                  <!-- <p>
-                    My research interest lies in developing advanced robot policy and skill learning techniques, particularly for complex manipulation tasks like dexterous manipulation. 
-                    I am fascinated by how robots can be trained to better perceive and interact with their surroundings through the integration of multimodal perception—combining visual, tactile, and auditory inputs. 
-                    A key focus is on designing innovative observation spaces that not only enhance policy learning but also deepen the robot's understanding of the environment. 
-                    I explore how deep reinforcement learning, imitation learning, and computer vision can be harnessed to push the boundaries of what robots can achieve, aiming to create machines capable of more intelligent, human-like interactions.
-                  </p> -->
-
+                  <h2>Selected Publications</h2>
                   <p>(* indicates equal contribution, † indicates equal advising)</p>
                 </td>
               </tr>
@@ -88,26 +70,84 @@
           <table
             style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <tbody>
-              <tr onmouseout="sope_stop()" onmouseover="sope_start()">
+              <tr class="paper-row" onmouseleave="dexmulti_stop()" onmouseenter="dexmulti_start()">
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                  <div class="one">
+                    <div class="two" id='dexmulti_image'>
+                      <video id="dexmulti_video" width="100%" muted loop>
+                        <source src="images/dexmulti/dexmulti_hover.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                    <img src='images/dexmulti/dexmulti.jpg' width="100%">
+                  </div>
+                  <script type="text/javascript">
+                    function dexmulti_start() {
+                      var el = document.getElementById('dexmulti_image');
+                      var vid = document.getElementById('dexmulti_video');
+                      el.style.opacity = "1";
+                      vid.play();
+                    }
+
+                    function dexmulti_stop() {
+                      var el = document.getElementById('dexmulti_image');
+                      var vid = document.getElementById('dexmulti_video');
+                      el.style.opacity = "0";
+                      vid.pause();
+                      vid.currentTime = 0;
+                    }
+                    dexmulti_stop();
+                  </script>
+                </td>
+                <td style="padding:20px;width:75%;vertical-align:middle">
+                  <a href="https://dexmulti.github.io/" target="_blank">
+                    <span class="papertitle">Concurrent Prehensile and Nonprehensile Manipulation: A Practical Approach to Multi-Stage Dexterous Tasks</span>
+                  </a>
+                  <br>
+                  <strong><u>Hao Jiang</u></strong>,
+                  <span class="coauthor">Yue Wu</span>,
+                  <a href="https://yuewang.xyz/" target="_blank" class="coauthor">Yue Wang</a>,
+                  <a href="https://uscresl.org/principal-investigator/" target="_blank" class="coauthor">Gaurav S. Sukhatme</a>,
+                  <a href="https://danielseita.github.io/" target="_blank" class="coauthor">Daniel Seita</a>
+                  <br>
+                  <em>Technical Report</em>, 2025
+                  <br>
+                  <a href="https://dexmulti.github.io/" target="_blank">project page</a>
+                  /
+                  <a href="https://arxiv.org/abs/2603.11655" target="_blank">arXiv</a>
+                  <p style="margin-top:8px;">
+                    Sample-efficient dexterous manipulation via retrieve-align-execute over object-centric skills. Achieves 66% success on concurrent multi-stage tasks with 3–4 demos per object, outperforming diffusion policy baselines by 2–3×.
+                  </p>
+                </td>
+              </tr>
+
+              <tr class="paper-row" onmouseleave="sope_stop()" onmouseenter="sope_start()">
                 <td style="padding:20px;width:25%;vertical-align:middle">
                   <div class="one">
                     <div class="two" id='sope_image'>
-                      <video width=100% muted autoplay loop>
+                      <video id="sope_video" width="100%" muted loop>
                         <source src="images/sope/sope.webm" type="video/webm">
                         Your browser does not support the video tag.
                       </video>
                     </div>
-                    <img src='images/sope/sope.jpg' width=100%>
+                    <img src='images/sope/sope.jpg' width="100%">
                   </div>
                   <script type="text/javascript">
                     function sope_start() {
-                      document.getElementById('sope_image').style.opacity = "1";
+                      var el = document.getElementById('sope_image');
+                      var vid = document.getElementById('sope_video');
+                      el.style.opacity = "1";
+                      vid.play();
                     }
 
                     function sope_stop() {
-                      document.getElementById('sope_image').style.opacity = "0";
+                      var el = document.getElementById('sope_image');
+                      var vid = document.getElementById('sope_video');
+                      el.style.opacity = "0";
+                      vid.pause();
+                      vid.currentTime = 0;
                     }
-                    sope_stop()
+                    sope_stop();
                   </script>
                 </td>
                 <td style="padding:20px;width:75%;vertical-align:middle">
@@ -117,9 +157,9 @@
                   </a>
                   <br>
                   <strong><u>Hao Jiang</u></strong>,  
-                  <a href="https://yuhaiw.github.io/" target="_blank" style="color: black;">Yuhai Wang*</a>,
-                  <a href="https://hanyang-zhou.github.io/" target="_blank" style="color: black;">Hanyang Zhou*</a>,
-                  <a href="https://danielseita.github.io/" target="_blank" style="color: black;">Daniel Seita</a>
+                  <a href="https://yuhaiw.github.io/" target="_blank" class="coauthor">Yuhai Wang*</a>,
+                  <a href="https://hanyang-zhou.github.io/" target="_blank" class="coauthor">Hanyang Zhou*</a>,
+                  <a href="https://danielseita.github.io/" target="_blank" class="coauthor">Daniel Seita</a>
                   <br>
                   <em>International Symposium of Robotics Research</em> (<strong>ISRR</strong>), 2024
                   <br>
@@ -132,14 +172,51 @@
                   <a href="https://youtu.be/yLjM2dJnFqU" target="_blank">presentation</a>
                   /
                   <a href="https://hanyang-zhou.github.io/blog/sopedex" target="_blank">blog</a>
-                  <p></p>
-                  <p>
-                    This paper presents the Singulating Objects in Packed Environments (SOPE) framework, which utilizes a novel displacement-based state representation and a multi-phase RL approach to enable effective singulation of target objects in cluttered environments using a 16-DOF Allegro Hand. 
-                    The proposed method demonstrates high success rates in both simulation and real-world experiments, outperforming alternative techniques.
+                  <p style="margin-top:8px;">
+                    Multi-phase RL with a displacement-based state representation for singulating target objects in clutter using a 16-DOF Allegro Hand. Demonstrates strong sim-to-real transfer and outperforms baselines in packed-environment tasks.
                   </p>
                 </td>
               </tr>
 
+            </tbody>
+          </table>
+
+          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+            <tbody>
+              <tr>
+                <td>
+                  <h2>Other Publications</h2>
+                  <div class="other-pub">
+                    <a href="https://envision-paper.github.io/" target="_blank" class="other-pub-title">ENVISION: Embodied Visual Planning via Goal-Imagery Video Diffusion</a>
+                    <div class="other-pub-authors">Yuming Gu, Yizhi Wang, Yining Hong, Yipeng Gao, <strong><u>Hao Jiang</u></strong>, Angtian Wang, Bo Liu, Nathaniel S. Dennler, Zhengfei Kuang, Hao Li, Gordon Wetzstein, Chongyang Ma</div>
+                    <div class="other-pub-meta">
+                      <em>arXiv</em>, 2025
+                      <span class="pub-links">
+                        <a href="https://envision-paper.github.io/" target="_blank">project page</a>
+                        /
+                        <a href="https://arxiv.org/abs/2512.22626" target="_blank">arXiv</a>
+                      </span>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+            <tbody>
+              <tr>
+                <td>
+                  <h2>Open-Source</h2>
+                  <div class="other-pub">
+                    <a href="https://github.com/Msornerrrr/in-hand-rotation-mjlab" target="_blank" class="other-pub-title">In-Hand Cube Rotation with LEAP Hand (MjLab)</a>
+                    <div class="other-pub-authors">Reinforcement learning pipeline for sim-to-real in-hand cube rotation using a LEAP Hand. Features asymmetric actor-critic training, curriculum learning, and domain randomization for robust real-world transfer.</div>
+                    <div class="other-pub-meta">
+                      <a href="https://github.com/Msornerrrr/in-hand-rotation-mjlab" target="_blank">GitHub</a>
+                    </div>
+                  </div>
+                </td>
+              </tr>
             </tbody>
           </table>
 
@@ -176,6 +253,9 @@
                 <td>
                   <h2>Service</h2>
                   <p>
+                    <b>Journal reviewer</b>
+                    : IEEE Robotics and Automation Letters (RA-L)
+                    <br>
                     <b>Workshop reviewer</b>
                     : Agile Robotics
                     <a href="https://agile-robotics-workshop.github.io/icra2024/" target="_blank">Workshop</a>
@@ -196,10 +276,8 @@
             style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <tbody>
               <tr>
-                <td style="padding:0px">
-                  <br>
-                  <p>Inspired by the template <a href="https://github.com/jonbarron/website" target="_blank">here</a>.
-                  </p>
+                <td style="padding:20px">
+                  <p>Website designed and implemented with <a href="https://claude.ai/code" target="_blank">Claude Code</a>.</p>
                 </td>
               </tr>
             </tbody>
