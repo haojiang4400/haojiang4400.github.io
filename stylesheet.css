@@ -72,7 +72,7 @@
    Base
    ========================================================= */
 :root {
-  --accent:       #3e6ef5;
+  --accent:       #4f46e5;
   --accent-hover: #f09228;
   --bg:           #f4f6fb;
   --card-bg:      #ffffff;
@@ -85,7 +85,7 @@
 }
 
 [data-theme="dark"] {
-  --accent:       #6b9bff;
+  --accent:       #8b91ff;
   --accent-hover: #f09228;
   --bg:           #141720;
   --card-bg:      #1e2130;
