@@ -32,16 +32,17 @@
                     Hao Jiang | 姜昊
                   </p>
                   <p>
-                    I am a first-year PhD student in Computer Science at the <a href="https://www.usc.edu/" target="_blank">University of Southern California</a>,
+                    I am a second-year PhD student in Computer Science at the <a href="https://www.usc.edu/" target="_blank">University of Southern California</a>,
                     advised by Prof. <a href="https://danielseita.github.io/" target="_blank">Daniel Seita</a>.
                     I completed my undergraduate studies at USC, double majoring in Computer Science and Applied &amp; Computational Mathematics (ACMA).
                   </p>
                   <p>
-                    I'm broadly interested in robot learning and manipulation. 
-                    Currently, my focus is on dexterous grasping & manipulation.
+                    I work on multi-functional, contact-rich dexterous manipulation and the multi-modal sensing it requires.
+                    My methods impose explicit task structure on learned policies, drawing on model-based estimation and control
+                    where reliable state or safe execution is needed, and I validate them on real robots.
                   </p>
                   <p class="social-links" style="text-align:center">
-                    <a href="mailto:hjiang86@usc.com" target="_blank">Email</a>
+                    <a href="mailto:hjiang86@usc.edu" target="_blank">Email</a>
                     <a href="https://scholar.google.com/citations?hl=en&user=qEEdTEwAAAAJ" target="_blank">Google Scholar</a>
                     <a href="https://github.com/msornerrrr/" target="_blank">Github</a>
                     <a href="https://www.linkedin.com/in/hao-jiang-1a3a73225/" target="_blank">LinkedIn</a>
@@ -70,6 +71,55 @@
           <table
             style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <tbody>
+              <tr class="paper-row" onmouseleave="touch_stop()" onmouseenter="touch_start()">
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                  <div class="one">
+                    <div class="two" id='touch_image'>
+                      <video id="touch_video" width="100%" muted loop>
+                        <source src="images/touch/touch_hover.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                    <img src='images/touch/touch.jpg' width="100%">
+                  </div>
+                  <script type="text/javascript">
+                    function touch_start() {
+                      var el = document.getElementById('touch_image');
+                      var vid = document.getElementById('touch_video');
+                      el.style.opacity = "1";
+                      vid.play();
+                    }
+
+                    function touch_stop() {
+                      var el = document.getElementById('touch_image');
+                      var vid = document.getElementById('touch_video');
+                      el.style.opacity = "0";
+                      vid.pause();
+                      vid.currentTime = 0;
+                    }
+                    touch_stop();
+                  </script>
+                </td>
+                <td style="padding:20px;width:75%;vertical-align:middle">
+                  <a href="https://interaction-dex-grasp.github.io/" target="_blank">
+                    <span class="papertitle">When Does Touch Matter? Charting the Vision&ndash;Interaction Gap in Cluttered Dexterous Grasping</span>
+                  </a>
+                  <br>
+                  <strong><u>Hao Jiang</u></strong>,
+                  <span class="coauthor">Luis Dominguez</span>,
+                  <a href="https://danielseita.github.io/" target="_blank" class="coauthor">Daniel Seita</a>
+                  <br>
+                  <em>In submission</em>, 2026
+                  <br>
+                  <a href="https://interaction-dex-grasp.github.io/" target="_blank">project page</a>
+                  /
+                  <a href="https://arxiv.org/abs/2609.24068" target="_blank">arXiv</a>
+                  <p style="margin-top:8px;">
+                    A controlled study of when vision alone stops being enough for dexterous grasping in clutter. Sweeping five scene conditions of increasing occlusion and confinement charts a widening vision&ndash;interaction gap, and shows contact wrench and taxel sensing to be complementary rather than redundant.
+                  </p>
+                </td>
+              </tr>
+
               <tr class="paper-row" onmouseleave="dexmulti_stop()" onmouseenter="dexmulti_start()">
                 <td style="padding:20px;width:25%;vertical-align:middle">
                   <div class="one">
@@ -202,7 +252,7 @@
                     <a href="https://openreview.net/forum?id=WqK7FG664s" target="_blank" class="other-pub-title">UniLatent: Cross-Embodiment Transfer via Latent Observation Alignment</a>
                     <div class="other-pub-authors">Yufei Ding*, Yi Du*, Weiduo Yuan, <strong><u>Hao Jiang</u></strong>, Dylan Goetting, Lawrence Yunliang Chen, Daniel Seita, Yue Wang</div>
                     <div class="other-pub-meta">
-                      <em>ICRA Workshop on Beyond Teleop</em>, 2026
+                      <em>Conference on Robot Learning</em> (<strong>CoRL</strong>), 2026
                       <span class="pub-links">
                         <a href="https://openreview.net/forum?id=WqK7FG664s" target="_blank">OpenReview</a>
                       </span>
@@ -280,8 +330,11 @@
                 <td>
                   <h2>Service</h2>
                   <p>
+                    <b>Conference reviewer</b>
+                    : ICRA 2027, IROS 2026
+                    <br>
                     <b>Journal reviewer</b>
-                    : IEEE Robotics and Automation Letters (RA-L)
+                    : IEEE Robotics and Automation Letters (RA-L), 2025
                     <br>
                     <b>Workshop reviewer</b>
                     : Agile Robotics
